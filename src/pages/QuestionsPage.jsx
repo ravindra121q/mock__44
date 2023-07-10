@@ -15,6 +15,8 @@ export const QuestionsPage = () => {
     dispatch(postData(location.state, count)).then(() => {
       navigate("/dashboard");
     });
+    alert("Submitted");
+    return navigate("/");
   };
   useEffect(() => {
     dispatch(addQuestion(location.state, 1));
@@ -31,7 +33,7 @@ export const QuestionsPage = () => {
   const handlePrevQuestion = () => {
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex((prevIndex) => prevIndex - 1);
-      setSelectedOption(null); // Reset selected option for the previous question
+      setSelectedOption(null);
     }
   };
 
